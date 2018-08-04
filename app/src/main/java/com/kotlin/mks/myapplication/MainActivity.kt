@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.widget.LinearLayout
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,9 +28,17 @@ class MainActivity : AppCompatActivity() {
         users.add(User("MS", "1234567990"))
 
 
-        val sampleAdapter = SampleAdapter(users)
+        val sampleAdapter = SampleAdapter(users, { userItem: User -> partItemClicked(userItem) })
+
+
         rvList!!.adapter = sampleAdapter
 
 
     }
+
+
+    private fun partItemClicked(userItem: User) {
+        Toast.makeText(this, " ${userItem.name}", Toast.LENGTH_LONG).show()
+    }
+
 }
