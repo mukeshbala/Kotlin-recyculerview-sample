@@ -17,6 +17,7 @@ class SampleTwoActivity : AppCompatActivity() {
     private var profileName:String?=null
     private var profilePhone:String?=null
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sample)
