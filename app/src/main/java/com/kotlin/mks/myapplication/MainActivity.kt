@@ -11,10 +11,8 @@ class MainActivity : AppCompatActivity() {
 
     var rvList: RecyclerView? = null
 
-    val nameEX = arrayOf("Shakespeare", "Hemingway", "Twain")
-
-    val phoneEx = arrayOf("789596464646", "544646546", "36985201478")
-//    var phoneNumber = setOf(1, 10, 15)
+    val nameEX = arrayOf("Sample One", "Sample Two", "Sample Three")
+    val phoneEx = arrayOf("9876543210", "7894561230", "6549873210")
 
 
     val users = ArrayList<User>()
@@ -29,14 +27,17 @@ class MainActivity : AppCompatActivity() {
         rvList!!.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
 
 
-//        for(nameS in (nameEX)){
-//            userSample.add(User(user))
-//        }
 
-        for (i in nameEX.indices
-        ) {
+        for (i in nameEX.indices) {
             users.add(User(nameEX[i], phoneEx[i]))
         }
+
+        users.forEach { it.name
+        it.phone}
+
+//        users.forEach {
+//            users.add(User(nameFE[nameFE.indexOf(it.name)],phoneFE[phoneFE.indexOf(it.phone)]))
+//        }
 
         users.add(User("Mukesh", "9632587410"))
         users.add(User("Jo", "7410258963"))
@@ -45,10 +46,7 @@ class MainActivity : AppCompatActivity() {
 
 
         val sampleAdapter = SampleAdapter(users, { userItem: User -> partItemClicked(userItem) })
-
-
         rvList!!.adapter = sampleAdapter
-
 
     }
 
